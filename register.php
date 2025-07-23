@@ -34,14 +34,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-<body class="bg-light">
-<div class="container mt-5">
-    <h2>User Registration</h2>
+    <body class ="bg-light">
+        
+    <!--<body class="container d-flex justify-content-center align-items-center" style="max-width: 400px;">-->
+    <div class="container mt-5" style="max-width: 400px;">
+    <h2 class= "text-center mb-4" style="padding-top:5%">User Registration</h2>
 
     <?php if (isset($error)) echo "<div class='alert alert-danger'>$error</div>"; ?>
     <?php if (isset($success)) echo "<div class='alert alert-success'>$success</div>"; ?>
 
-    <form method="POST" class="bg-white p-4 rounded shadow" style="max-width: 500px;">
+    <div style="padding-bottom: 5%;">
+    <form method="POST" class="bg-white p-4 rounded shadow">
         <div class="mb-3">
             <label>Full Name</label>
             <input type="text" name="name" required class="form-control">
@@ -59,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="password" name="confirm" required class="form-control">
         </div>
         <button type="submit" class="btn btn-success w-100">Register</button>
-        <p class="mt-3">Already have an account? <a href="login.php">Login here</a></p>
-    </form>
+        <p class="mt-3 text-center">Already have an account? <a href="login.php">Login here</a></p>
+    </div></form></div>
 </body>
 
 <?php include 'includes/footer.php';

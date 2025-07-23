@@ -1,4 +1,5 @@
 <?php
+$title = 'Home';
 session_start();
 include 'includes/header.php';
 require 'db.php';
@@ -8,12 +9,6 @@ $stmt = $pdo->query("SELECT * FROM products ORDER BY id DESC LIMIT 6");
 $products = $stmt->fetchAll();
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Online Computer Store - Home</title>
-    <link href="css/style.css" rel="stylesheet">
-</head>
 <body class="bg-light">
 
 <div class="container py-5">
@@ -47,7 +42,5 @@ $products = $stmt->fetchAll();
         <a href="products.php" class="btn btn-secondary">Browse All Products</a>
     </div>
 </div>
-
 </body>
-</html>
 <?php include 'includes/footer.php';?>

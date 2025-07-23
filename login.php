@@ -1,6 +1,8 @@
 <?php
+$title = 'Login';
 session_start();
 require 'db.php';
+include 'includes/header.php';
 
 $error = '';
 
@@ -36,18 +38,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login - Online Computer Store</title>
-    <link href="css/style.css" rel="stylesheet">
-</head>
+
 <body class="bg-light">
 <div class="container mt-5" style="max-width: 400px;">
-    <h2 class="mb-4">User Login</h2>
+    <h2 class="mb-4 text-center">User Login</h2>
     <?php if ($error): ?>
         <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
     <?php endif; ?>
+       
+<div style="padding-bottom: 5%;">
     <form method="POST" class="bg-white p-4 rounded shadow">
         <div class="mb-3">
             <label>Email Address</label>
@@ -60,6 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" class="btn btn-primary w-100">Login</button>
         <p class="mt-3">Don't have an account? <a href="register.php">Register here</a></p>
     </form>
-</div>
+</div></div>
 </body>
-</html>
+<?php include 'includes/footer.php';?>
